@@ -1,0 +1,125 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+  
+}
+
+
+#bod{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    mix-blend-mode: difference;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%); */
+    border-radius: 50%;
+    transition: all linear 0.2s;
+    background-color: green;
+    z-index: 9;
+}
+#bgimage{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#bgimage img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+#setting1-button {
+    position: absolute;
+    top: 10px; 
+    left: 10px; 
+    width: 35px;
+    height: 35px;
+}
+@keyframes floatOption {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+.addition-button {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(247, 10, 10);
+    border: 5px solid #f3c80d;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    font-weight: bolder;transition: background-color 0.3s ease;
+    animation: floatOption 2s ease infinite;
+}
+.addition-button:hover {
+    background-color: rgb(34, 137, 255);
+    border:5px solid orangered;
+}
+.subtraction-button {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(247, 10, 10);
+    border: 5px solid #f3c80d;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    font-weight: bolder;transition: background-color 0.3s ease;
+    animation: floatOption 2s ease infinite;
+}
+.subtraction-button:hover {
+    background-color: rgb(34, 137, 255);
+    border:5px solid orangered;
+}
+.multiplication-button {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(247, 10, 10);
+    border: 5px solid #f3c80d;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    font-weight: bolder;transition: background-color 0.3s ease;
+    animation: floatOption 2s ease infinite;
+}
+.multiplication-button:hover {
+    background-color: rgb(34, 137, 255);
+    border:5px solid orangered;
+}
+.division-button {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(247, 10, 10);
+    border: 5px solid #f3c80d;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: all ease 0.2s;
+    transition: background-color 0.3s ease;
+    animation: floatOption 2s ease infinite;
+}
+.division-button:hover {
+    background-color: rgb(34, 137, 255);
+    border:5px solid orangered;
+}
+

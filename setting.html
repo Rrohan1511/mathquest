@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>setting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="setting.css"> <!-- Link to external CSS file -->
+</head>
+
+<body>
+    <header>
+        <div id="bod"></div>
+        <div>
+            <a href="front.html"> <button class="home-button">Home</button></a>
+        </div>
+        <div>
+            <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+    </header>
+    <div class="container">
+        <fieldset>
+            <legend>Music</legend>
+            <input type="radio" class="radio" id="on1" name="Music" value="on1" checked />
+            <label for="on1">ON</label>
+            <input type="radio" class="radio" id="off1" name="Music" value="off1"  />
+            <label for="off1">OFF</label>
+        </fieldset>
+        <fieldset>
+            <legend>Sound</legend>
+            <input type="radio" class="radio" id="on2" name="Sound" value="on2" checked />
+            <label for="on2">ON</label>
+            <input type="radio" class="radio" id="off2" name="Sound" value="off2"  />
+            <label for="off2">OFF</label>
+        </fieldset>
+    </div><br>
+    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        var main = document.querySelector("body");
+      var cr = document.querySelector("#bod");
+
+      main.addEventListener("mousemove", function (dets) {
+        cr.style.left = dets.x + "px";
+        cr.style.top = dets.y + "px";
+      });
+    </script>
+</body>
+</html>

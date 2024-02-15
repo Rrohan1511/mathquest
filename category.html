@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>category</title>
+    <link rel="stylesheet" href="category.css" />
+  </head>
+  <body>
+    <div id="bod">
+    </div>
+    <div id="bgimage">
+      <img
+        src="https://wallpapers.com/images/hd/math-symbols-in-orange-urukb380ueajtbvp.jpg"
+        alt=""
+      />
+    </div>
+    <main>
+      <div>
+        <a href="addition.html">
+          <button class="addition-button">ADDITION</button></a
+        ><br /><br />
+        <a href="subtraction.html"
+          ><button class="subtraction-button">SUBTRACTION</button></a
+        ><br /><br />
+        <a href="multiplication.html">
+          <button class="multiplication-button">MULTIPLICATION</button></a
+        ><br /><br />
+        <a href="division.html">
+          <button class="division-button">DIVISION</button></a
+        ><br /><br />
+        <a href="setting.html">
+          <img src="setting.png" alt="setting" id="setting1-button"
+        /></a>
+      </div>
+    </main>
+    <script>
+      var main = document.querySelector("body");
+      var cr = document.querySelector("#bod");
+
+      main.addEventListener("mousemove", function (dets) {
+        cr.style.left = dets.x + "px";
+        cr.style.top = dets.y + "px";
+      });
+    </script>
+  </body>
+</html>

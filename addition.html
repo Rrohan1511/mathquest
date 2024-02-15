@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="addition.css" />
+  </head>
+  <body background="https://wallpapers.com/images/hd/math-symbols-in-orange-urukb380ueajtbvp.jpg"
+  >
+ 
+    <div id="main">
+
+    <div id="part1">
+      <a href="addlevel1.html"> <button class="level1">level 1</button></a><br /><br />
+      <a href="addlevel2.html"><button  class="level2">level 2</button></a><br /><br />
+      <a href="addlevel3.html"> <button class="level3">level 3</button></a><br /><br />
+      <a href="addlevel4.html"> <button class="level4">level 4</button></a><br /><br />
+      <a href="addlevel5.html"> <button class="level5">level 5</button></a><br /><br /></div>
+     <div id="part2">
+      <a href="addlevel6.html"><button  class="level6">level 6</button></a><br /><br />
+      <a href="addlevel7.html"> <button class="level7">level 7</button></a><br /><br />
+      <a href="addlevel8.html"> <button class="level8">level 8</button></a><br /><br />
+      <a href="addlevel9.html"> <button class="level9">level 9</button></a><br /><br />
+      <a href="addlevel10.html"><button  class="level10">level 10</button></a><br /><br />
+    </div>
+    </div>
+    
+
+       <a href="setting.html">
+        <img src="setting.png" alt="setting" id="setting1-button"
+      /></a> 
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        gsap.from("#part1",{
+            y:"-100%",
+            duration:1.5,
+            delay:0.5,
+            stragger:5,
+            opacity:0.5
+        })
+        gsap.from("#part2",{
+            y:"-100%",
+            duration:1,
+            delay:0.5,
+           
+            opacity:0.5
+        })
+      
+    </script>
+  </body>
+</html>

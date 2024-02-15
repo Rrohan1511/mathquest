@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="option.css">
+</head>
+<body  background="https://wallpapers.com/images/hd/math-symbols-in-orange-urukb380ueajtbvp.jpg" id="#img">
+    <div id="crow"></div>
+
+    <div id="main">
+        <a href="category.html"> <button class="arithmatic-button">ARITHMATIC</button></a><br><br>
+        <a href=" "><button class="riddle-button">RIDDLE</button></a>
+    </div>
+    <div>
+    <a href="setting.html">
+        <img src="setting.png" alt="setting" id="setting1-button"/></a>
+    </div>
+    <script>
+
+var main = document.querySelector('body');
+        var crow = document.querySelector('#crow');
+
+        main.addEventListener("mousemove", function (dets) {
+
+
+            crow.style.left = dets.x + "px";
+            crow.style.top = dets.y + "px";
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multiplication</title>
+    <link rel="stylesheet" href="mullevel2.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div>
+        <a href="setting.html"> <img src="setting.png" alt="setting" id="setting1-button"></a>
+    </div>
+    <div class="container">
+        <h1>Multiplication Level 2</h1>
+        <div class="question" id="question">What is 3 x 6?</div>
+        <div class="options" id="options"><div class="option">69</div><div class="option">18</div><div class="option">70</div><div class="option">66</div></div>
+        <div class="result" id="result"></div>
+        <button id="backbutton" style="display: none;" class="back-button" onclick="goBack()">Back</button>
+    </div>
+<!-- Sound Effects -->
+    <audio id="correctSound" src="correct.mp3"></audio>
+    <audio id="wrongSound" src="wrong.mp3"></audio>
+    <script>
+      const questionElement = document.getElementById("question");
+        const optionsElement = document.getElementById("options");
+        const resultElement = document.getElementById("result");
+        const correctSound = document.getElementById("correctSound");
+        const wrongSound = document.getElementById("wrongSound");
+        const tables = [ 6, 7, 8, 9, 10];
+        let currentTableIndex = 0;
+        let correctAnswer = 0;
+        let questionCount = 0;
+        let correctCount = 0;
+        const maxQuestions = 10; // Set the maximum number of questions here
+
+
+        function generateQuestion() {
+            if (questionCount >= maxQuestions) {
+                // If the maximum question count is reached, end the game
+                endGame();
+                return;
+            }
+            const currentTableIndex = Math.floor(Math.random() * tables.length);
+            const table = tables[currentTableIndex];
+            const multiplier = Math.floor(Math.random() * 10) + 1;
+            correctAnswer = table * multiplier;
+
+            questionElement.textContent = `What is ${table} x ${multiplier}?`;
+
+            const options = [];
+            options.push(correctAnswer);
+
+            while (options.length < 4) {
+                const randomOption = Math.floor(Math.random() * 100) + 1;
+                if (!options.includes(randomOption)) {
+                    options.push(randomOption);
+                }
+            }
+
+            options.sort(() => Math.random() - 0.5);
+
+            optionsElement.innerHTML = "";
+            options.forEach((option) => {
+                const optionElement = document.createElement("div");
+                optionElement.classList.add("option");
+                optionElement.textContent = option;
+                optionElement.addEventListener("click", checkAnswer);
+                optionsElement.appendChild(optionElement);
+            });
+            questionCount++;
+        }
+
+        function checkAnswer(event) {
+            const selectedAnswer = parseInt(event.target.textContent);
+            if (selectedAnswer === correctAnswer) {
+                resultElement.textContent = "Correct! 🎉";
+                correctCount++;
+                correctSound.play();
+            } else {
+                resultElement.textContent = "Wrong! Try Again! ❌";
+                wrongSound.play();
+            }
+            setTimeout(nextQuestion, 1500);
+        }
+
+        
+        function nextQuestion() {
+            resultElement.textContent = "";
+            if (questionCount < maxQuestions) {
+                generateQuestion();
+            } else {
+                endGame();
+            }
+        }
+       
+        function endGame() {
+            // Display a message or perform any necessary actions when the game ends
+            questionElement.textContent = "Game Over";
+            optionsElement.innerHTML = "";
+            resultElement.textContent = `You answered ${maxQuestions} questions, and you got ${correctCount} correct.`;
+            backbutton.style.display = "block";
+        }
+        function goBack() {
+        
+        window.history.back();
+    }
+        generateQuestion();
+    
+    </script>
+
+
+</body></html>
