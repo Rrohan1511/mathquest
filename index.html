@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MathQuest Jr.</title>
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="shortcut icon" href="math.png" type="image/x-icon" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div id="loader">
+      <img src="logo.jpg" alt="" />
+    </div>
+    <div id="main">
+      <!-- <div id="cursor"></div> -->
+      <div id="bgimg">
+        <img
+          id="front"
+          src="https://wallpapers.com/images/hd/math-symbols-in-orange-urukb380ueajtbvp.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <a id="play" href="option.html"
+          ><button class="play-button">Play</button></a
+        ><br /><br />
+        <a href="setting.html">
+          <img src="setting.png" alt="setting" id="setting1-button"/></a>
+      </div>
+    </div>
+
+    <!--  Gsap is needed for Basic Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Scroll Trigger is needed for Scroll Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/sheryjs/dist/Shery.js"
+    ></script>
+    <script>
+      // var main = document.querySelector("#main");
+      // var crs = document.querySelector("#cursor");
+
+      // main.addEventListener("mousemove", function (dets) {
+      //   crs.style.left = dets.x + "px";
+      //   crs.style.top = dets.y + "px";
+      // });
+
+      // var a=Math.floor(Math.random() *101);
+      // var p=Math.ceil(a)
+      // console.log(p);
+
+      var load = document.querySelector("#loader");
+      setInterval(function () {
+        load.style.bottom = "200%";
+        // load.style.scale="0";
+        load.style.opacity = "0.2";
+      }, 1500);
+
+      var logoImage = document.querySelector("#loader img");
+      setTimeout(function () {
+        logoImage.style.scale = "1.1";
+
+        logoImage.style.opacity = "1";
+      }, 500);
+
+      gsap.from("#main #bgimg", {
+        y: 100,
+        duration: 2,
+        delay: 1,
+        opacity: 0.2,
+      });
+      gsap.from("#setting1-button", {
+        y: 400,
+        duration: 2.5,
+        delay: 1.8,
+        opacity: 0.2,
+        scale: 3,
+      });
+      function mouseFollower() {
+        Shery.mouseFollower({
+          //Parameters are optional.
+          skew: true,
+          ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+          duration: 0.001,
+        });
+      }
+      mouseFollower();
+    </script>
+  </body>
+</html>
